@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "Common": ["Common/index"],
+      "Types": ["Types"],
+      "Hooks": ["Hooks/"],
+      "Constants": ["Constants/"],
+      "Helpers": ["Helpers/"],
+      "Pages": ["Pages/"],
+      "Services": ["Services/"],
+      "Router": ["Router/"],
+      "FormValidation": ["FormValidation/"],
+      "Components": ["Components/"],
+      "Assets": ["Assets/"],
+      "Context": ["Context/"]
+    }
+  }
+}

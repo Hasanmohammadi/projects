@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: 'PoppinsFont' !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: 'PoppinsFont' !important;
+}
+
+@font-face {
+  src: url('../Fonts/Inter-Medium.ttf'), url('../Fonts/Inter-Regular.ttf'),
+    url('../Fonts/Inter-Medium.ttf'), url('../Fonts/Inter-Light.ttf'),
+    url('../Fonts/Inter-ExtraLight.ttf'),
+    url('../Fonts/Inter-ExtraBold.ttf'), url('../Fonts/Inter-Bold.ttf'),
+    url('../Fonts/Inter-Black.ttf');
+  font-family: 'PoppinsFont';
+}
+
+html * {
+  font-family: 'PoppinsFont' !important;
+}

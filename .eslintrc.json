@@ -1,0 +1,70 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "jest": true
+  },
+  "extends": [
+    "react-app",
+    "react-app/jest",
+    "airbnb",
+    "airbnb-typescript",
+    "plugin:import/typescript"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "extends": [
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking"
+      ]
+    }
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "plugins": ["react", "@typescript-eslint"],
+  "rules": {
+    "no-console": "warn",
+    "@typescript-eslint/no-unsafe-assignment": "warn",
+    "no-unused-vars": "error",
+    "linebreak-style": "off",
+    "react/require-default-props": "off",
+    "react/jsx-wrap-multilines": "off",
+    "implicit-arrow-linebreak": "off",
+    "object-curly-newline": "off",
+    "@typescript-eslint/indent": "off",
+    "react/jsx-no-useless-fragment": "off",
+    "import/no-cycle": "off",
+    "react/button-has-type": "off",
+    "react/react-in-jsx-scope": "off",
+    "@@typescript-eslint/no-floating-promises": "off",
+    "react/jsx-curly-newline": "off",
+    "operator-linebreak": "off",
+    "no-spaced-func": "off",
+    "function-paren-newline": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "import/prefer-default-export": "warn",
+    "no-unsafe-optional-chaining": "warn",
+    "@typescript-eslint/no-misused-promises": [
+      2,
+      {
+        "checksVoidReturn": {
+          "attributes": false
+        }
+      }
+    ],
+    "no-restricted-imports": [
+      "error",
+      {
+        "patterns": ["@mui/*/*/*"]
+      }
+    ]
+  }
+}
