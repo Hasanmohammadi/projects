@@ -1,3 +1,4 @@
-import getSearchHotelRooms from './getSearchHotelRooms';
+import postCreateSearch from "./postCreateSearch";
+import postSearchResult from "./postSearchResult";
 
-export { getSearchHotelRooms };
+export { postSearchResult, postCreateSearch };

@@ -1,21 +1,23 @@
-import { AUTH_URLS } from 'Constants/urls';
-import { LoginDataI } from 'Types/Auth';
-import axios from 'axios';
+import { AUTHENTICATION_URLS } from "@/constants/urls";
+import { axiosInstance } from "@/providers";
+import { LoginResultI } from "@/types/auth";
+import { ApiResponseI } from "@/types/general";
 
-interface PostLoginArgsI {
-  languageId: string;
-  username: string;
+export interface PostLoginArgsI {
+  userName: string;
   password: string;
 }
 
-const postLogin = async ({ password, username }: PostLoginArgsI) => {
-  const response = await axios.post<LoginDataI>(AUTH_URLS.POST_LOGIN, {
-    languageId: '00000000-0000-0000-0000-000000000000',
-    username,
-    password,
-  });
+const postLogin = async ({ password, userName }: PostLoginArgsI) => {
+  const response = await axiosInstance.post<ApiResponseI<LoginResultI>>(
+    AUTHENTICATION_URLS.POST_LOGIN,
+    {
+      password,
+      userName,
+    }
+  );
 
-  return response.data;
+  return response?.data?.result;
 };
 
 export default postLogin;

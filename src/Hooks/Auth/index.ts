@@ -1,3 +1,4 @@
-import usePostLogin from './usePostLogin';
+import usePostRegister from './usePostRegister'
+import usePostLogin from './usePostLogin'
 
-export { usePostLogin };
+export { usePostRegister, usePostLogin }

@@ -1,4 +1,4 @@
-import postLogin from './postLogin';
-import postResetPassword from './postResetPassword';
+import postRegister from './postRegister'
+import postLogin from './postLogin'
 
-export { postLogin, postResetPassword };
+export { postRegister, postLogin }

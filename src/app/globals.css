@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  src: url("../assets/fonts/iranSansX/IRANSansXFaNum-Regular.woff"),
+    url("../assets/fonts/iranSansX//IRANSansXFaNum-Medium.woff"),
+    url("../assets/fonts/iranSansX//IRANSansXFaNum-Black.woff"),
+    url("../assets/fonts/iranSansX//IRANSansXFaNum-Bold.woff"),
+    url("../assets/fonts/iranSansX//IRANSansXFaNum-DemiBold.woff"),
+    url("../assets/fonts/iranSansX//IRANSansXFaNum-ExtraBold.woff"),
+    url("../assets/fonts/iranSansX//IRANSansXFaNum-Light.woff"),
+    url("../assets/fonts/iranSansX//IRANSansXFaNum-Thin.woff"),
+    url("../assets/fonts/iranSansX//IRANSansXFaNum-UltraLight.woff");
+  font-family: IRANSansX;
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+* {
+  direction: rtl;
+  font-family: IRANSansX !important;
+}
+
+:focus-visible {
+  outline: none;
+}
+
+.flight-main-page {
+  background-image: url("../assets/images/flight-bg.png");
+  background-size: cover;
+}
+
+.PhoneInput {
+  flex-flow: row-reverse;
+}
+.PhoneInputCountry {
+  gap: 7px;
+}
+.PhoneInputInput {
+  outline: none;
+}

@@ -1,27 +1,31 @@
-import { postLogin } from 'Services/Auth';
-import { NullResultI } from 'Types/Vendors';
-import { AxiosError } from 'axios';
-import Cookies from 'js-cookie';
-import { useMutation } from 'react-query';
-import { useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify';
+import { postLogin } from "@/services/auth";
+import { LoginResultI } from "@/types/auth";
+import { useMutation } from "@tanstack/react-query";
+import { AxiosError } from "axios";
+import Cookies from "js-cookie";
+import { toast } from "react-toastify";
 
-export default function usePostLogin() {
-  const navigate = useNavigate();
-  const { mutate: loginAction, isLoading } = useMutation(postLogin, {
-    onSuccess: ({ result }) => {
-      localStorage.setItem('userInfo', JSON.stringify(result));
-      Cookies.set('userToken', result.token);
-      localStorage.setItem('ExpirationOfDateToken', result.expiration);
-      navigate('/');
+export default function usePostLogin({
+  onSuccess,
+}: {
+  onSuccess?: (loginResult: LoginResultI) => void;
+}) {
+  const { mutate, isPending, data } = useMutation({
+    mutationFn: postLogin,
+    onSuccess: ({ tokenDetail, user }: LoginResultI) => {
+      Cookies.set("userTokenSafarestan", tokenDetail.token);
+      if (onSuccess) onSuccess({ tokenDetail, user });
+      toast.success("Welcome");
     },
-    onError(err) {
-      const error = err as AxiosError<NullResultI>;
-      toast.error(error.message, {
-        position: 'top-center',
-      });
+    onError(err: AxiosError<unknown, any>) {
+      const error = err;
+      toast.error(error.message);
     },
   });
 
-  return { loginAction, isLoading };
+  return {
+    postLoginAction: mutate,
+    postLoginLoading: isPending,
+    paymentData: data,
+  };
 }
